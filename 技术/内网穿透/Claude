@@ -1,0 +1,9 @@
+# Claude配置
+
+- 先用powershell下载或者直接找他的安装包
+- 把你的vpn设置成全局模式，如果有虚拟网卡就虚拟一下
+- 然后去github找ccswitch
+- 然后去智谱官网注册一个账号用人家免费送的
+- 注册申请一个api
+- 把api写到ccswitch里，然后去下载trae（前提是你之前的本地下不了Claude）
+- 然后找Claude的插件，然后token消耗完了，自己改一下配置文件
