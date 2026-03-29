@@ -1,0 +1,97 @@
+import sys
+import os
+from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton,
+                             QLabel, QFileDialog, QProgressBar, QMessageBox)
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
+from moviepy import VideoFileClip
+
+
+# 后台处理线程，防止 UI 卡死
+class ConvertThread(QThread):
+    finished = pyqtSignal(str)
+    error = pyqtSignal(str)
+
+    def __init__(self, input_path, output_path):
+        super().__init__()
+        self.input_path = input_path
+        self.output_path = output_path
+
+    def run(self):
+        try:
+            video = VideoFileClip(self.input_path)
+            video.audio.write_audiofile(self.output_path, logger=None)
+            video.close()
+            self.finished.emit(self.output_path)
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+class VideoToMp3App(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle('⚡ 极速视频转音频')
+        self.setFixedSize(400, 250)
+        self.setStyleSheet("""
+            QWidget { background-color: #1a1a1a; color: white; font-family: 'Microsoft YaHei'; }
+            QPushButton { 
+                background-color: #3d5afe; border-radius: 8px; padding: 10px; font-weight: bold; 
+            }
+            QPushButton:hover { background-color: #536dfe; }
+            QProgressBar { border: 1px solid #444; border-radius: 5px; text-align: center; }
+            QProgressBar::chunk { background-color: #00e676; }
+        """)
+
+        layout = QVBoxLayout()
+
+        self.label = QLabel('请选择或拖入 MP4 文件')
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(self.label)
+
+        self.btn_select = QPushButton('选择视频文件')
+        self.btn_select.clicked.connect(self.select_file)
+        layout.addWidget(self.btn_select)
+
+        self.progress = QProgressBar()
+        self.progress.hide()
+        layout.addWidget(self.progress)
+
+        self.setLayout(layout)
+
+    def select_file(self):
+        file_path, _ = QFileDialog.getOpenFileName(self, "选择视频", "", "Video Files (*.mp4 *.mkv *.avi)")
+        if file_path:
+            self.start_conversion(file_path)
+
+    def start_conversion(self, input_path):
+        output_path = os.path.splitext(input_path)[0] + ".mp3"
+
+        self.btn_select.setEnabled(False)
+        self.label.setText("正在转换中，请稍候...")
+        self.progress.show()
+        self.progress.setRange(0, 0)  # 设置为加载动画模式
+
+        self.thread = ConvertThread(input_path, output_path)
+        self.thread.finished.connect(self.on_finished)
+        self.thread.error.connect(self.on_error)
+        self.thread.start()
+
+    def on_finished(self, path):
+        self.progress.hide()
+        self.btn_select.setEnabled(True)
+        self.label.setText("转换完成！")
+        QMessageBox.information(self, "成功", f"音频已保存至:\n{path}")
+
+    def on_error(self, err_msg):
+        self.progress.hide()
+        self.btn_select.setEnabled(True)
+        QMessageBox.critical(self, "错误", f"转换失败: {err_msg}")
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = VideoToMp3App()
+    ex.show()
+    sys.exit(app.exec())
