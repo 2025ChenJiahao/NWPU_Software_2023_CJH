@@ -1,0 +1,32 @@
+ir {
+    name = "relu_model"
+    ver = 1
+    producer_name = "ReluProducer"
+    producer_version = "1.0"
+    input {
+        name = "relu_input"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 128 }
+                    dim { dim_value = 128 }
+                }
+            }
+        }
+    }
+    output {
+        name = "relu_output"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 128 }
+                    dim { dim_value = 128 }
+                }
+            }
+        }
+    }
+}

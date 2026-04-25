@@ -1,0 +1,47 @@
+ir {
+    name = "test_model_1"
+    ver = 1
+    producer_name = "TestProducer"
+    producer_version = "1.0"
+    domain = "test.domain"
+    model_version = 1
+    doc_string = "Simple test model"
+    input {
+        name = "input1"
+        type = tensor_type {
+            elem_type = int
+            shape {
+                dim { dim_value = 1 }
+                dim { dim_value = 3 }
+                dim { dim_value = 224 }
+                dim { dim_value = 224 }
+            }
+        }
+    }
+    output {
+        name = "output1"
+        type = tensor_type {
+            elem_type = float
+            shape {
+                dim { dim_value = 1 }
+                dim { dim_value = 1000 }
+            }
+        }
+    }
+    initializer {
+        name = "weights1"
+        type = tensor_type {
+            elem_type = float
+            shape {
+                dim { dim_value = 64 }
+                dim { dim_value = 3 }
+                dim { dim_value = 7 }
+                dim { dim_value = 7 }
+            }
+        }
+    }
+    opset_import {
+        domain = "ai.onnx"
+        version = 13
+    }
+}

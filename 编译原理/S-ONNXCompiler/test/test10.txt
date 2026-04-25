@@ -1,0 +1,94 @@
+ir {
+    name = "gemm_model"
+    ver = 1
+    producer_name = "GemmProducer"
+    producer_version = "1.0"
+    input {
+        name = "A"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 3 }
+                    dim { dim_value = 2 }
+                }
+            }
+        }
+    }
+    input {
+        name = "B"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 2 }
+                    dim { dim_value = 4 }
+                }
+            }
+        }
+    }
+    input {
+        name = "C"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 3 }
+                    dim { dim_value = 4 }
+                }
+            }
+        }
+    }
+    output {
+        name = "Y"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 3 }
+                    dim { dim_value = 4 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "init_A"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 3 }
+                    dim { dim_value = 2 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "init_B"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 2 }
+                    dim { dim_value = 4 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "init_C"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 3 }
+                    dim { dim_value = 4 }
+                }
+            }
+        }
+    }
+    opset_import {
+        domain = "ai.onnx"
+        version = 13
+    }
+}

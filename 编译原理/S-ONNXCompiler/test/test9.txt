@@ -1,0 +1,48 @@
+ir {
+    name = "concat_model"
+    ver = 1
+    producer_name = "ConcatProducer"
+    producer_version = "1.0"
+    input {
+        name = "input_a"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 64 }
+                    dim { dim_value = 28 }
+                    dim { dim_value = 28 }
+                }
+            }
+        }
+    }
+    input {
+        name = "input_b"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 64 }
+                    dim { dim_value = 28 }
+                    dim { dim_value = 28 }
+                }
+            }
+        }
+    }
+    output {
+        name = "concat_output"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 128 }
+                    dim { dim_value = 28 }
+                    dim { dim_value = 28 }
+                }
+            }
+        }
+    }
+}

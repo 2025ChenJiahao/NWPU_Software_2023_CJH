@@ -1,0 +1,80 @@
+ir {
+    name = "bn_model"
+    ver = 1
+    producer_name = "BNProducer"
+    producer_version = "1.0"
+    domain = "test.domain"
+    model_version = 2
+    input {
+        name = "batch_input"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 8 }
+                    dim { dim_value = 64 }
+                    dim { dim_value = 56 }
+                    dim { dim_value = 56 }
+                }
+            }
+        }
+    }
+    output {
+        name = "batch_output"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 8 }
+                    dim { dim_value = 64 }
+                    dim { dim_value = 56 }
+                    dim { dim_value = 56 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "bn_scale"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 64 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "bn_bias"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 64 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "bn_mean"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 64 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "bn_var"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 64 }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+ir {
+    name = "test_model_2"
+    ver = 2
+    producer_name = "AnotherProducer"
+    producer_version = "2.5"
+    domain = "ai.onnx"
+    model_version = 5
+    doc_string = "Multi-input test model"
+    input {
+        name = "data"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_param = "batch_size" }
+                    dim { dim_value = 3 }
+                    dim { dim_value = 224 }
+                    dim { dim_value = 224 }
+                }
+            }
+        }
+    }
+    input {
+        name = "labels"
+        type {
+            tensor_type {
+                elem_type = int
+                shape {
+                    dim { dim_param = "batch_size" }
+                    dim { dim_value = 1 }
+                }
+            }
+        }
+    }
+    output {
+        name = "logits"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_param = "batch_size" }
+                    dim { dim_value = 1000 }
+                }
+            }
+        }
+    }
+    opset_import {
+        domain = "ai.onnx"
+        version = 14
+    }
+}
