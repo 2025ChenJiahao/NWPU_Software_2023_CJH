@@ -1,0 +1,34 @@
+ir {
+    name = "pool_model"
+    ver = 1
+    producer_name = "PoolProducer"
+    producer_version = "1.5"
+    input {
+        name = "input_data"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 1 }
+                    dim { dim_value = 32 }
+                    dim { dim_value = 32 }
+                }
+            }
+        }
+    }
+    output {
+        name = "pooled_data"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 1 }
+                    dim { dim_value = 16 }
+                    dim { dim_value = 16 }
+                }
+            }
+        }
+    }
+}

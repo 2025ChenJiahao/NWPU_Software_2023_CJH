@@ -1,0 +1,61 @@
+ir {
+    name = "conv_model"
+    ver = 1
+    producer_name = "ConvProducer"
+    producer_version = "1.0"
+    domain = "test"
+    model_version = 1
+    input {
+        name = "input_tensor"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 3 }
+                    dim { dim_value = 64 }
+                    dim { dim_value = 64 }
+                }
+            }
+        }
+    }
+    output {
+        name = "conv_output"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 16 }
+                    dim { dim_value = 32 }
+                    dim { dim_value = 32 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "conv_weights"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 16 }
+                    dim { dim_value = 3 }
+                    dim { dim_value = 3 }
+                    dim { dim_value = 3 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "conv_bias"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 16 }
+                }
+            }
+        }
+    }
+}

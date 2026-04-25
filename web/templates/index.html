@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-ONNX Compiler</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .input-section {
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .results-section {
+            margin-top: 30px;
+        }
+        
+        .result-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>S-ONNX Compiler</h1>
+        
+        <div class="input-section">
+            <textarea id="code-input" placeholder="Enter your S-ONNX code here...">ir {
+    name = "test_model"
+    ver = 1
+    producer_name = "TestProducer"
+    producer_version = "1.0"
+    domain = "test.domain"
+    model_version = 1
+    doc_string = "Simple test model"
+    input {
+        name = "input1"
+        type = tensor_type {
+            elem_type = int
+            shape {
+                dim { dim_value = 1 }
+                dim { dim_value = 3 }
+                dim { dim_value = 224 }
+                dim { dim_value = 224 }
+            }
+        }
+    }
+    output {
+        name = "output1"
+        type = tensor_type {
+            elem_type = float
+            shape {
+                dim { dim_value = 1 }
+                dim { dim_value = 1000 }
+            }
+        }
+    }
+    opset_import {
+        domain = "ai.onnx"
+        version = 13
+    }
+}</textarea>
+            <button id="compile-btn">Compile</button>
+        </div>
+        
+        <div class="results-section">
+            <div class="result-step">
+                <h2>1. Lexical Analysis</h2>
+                <pre id="lexical-result">Output will appear here...</pre>
+            </div>
+            
+            <div class="result-step">
+                <h2>2. Syntax Analysis</h2>
+                <pre id="syntax-result">Output will appear here...</pre>
+            </div>
+            
+            <div class="result-step">
+                <h2>3. Semantic Analysis</h2>
+                <pre id="semantic-result">Output will appear here...</pre>
+            </div>
+            
+            <div class="result-step">
+                <h2>4. Code Generation</h2>
+                <pre id="codegen-result">Output will appear here...</pre>
+            </div>
+            
+            <div class="result-step">
+                <h2>5. Full Compilation</h2>
+                <pre id="full-result">Output will appear here...</pre>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('compile-btn').addEventListener('click', function() {
+            const code = document.getElementById('code-input').value;
+            
+            // Show loading state
+            document.querySelectorAll('pre').forEach(el => {
+                el.textContent = 'Processing...';
+            });
+            
+            // Send request to server
+            fetch('/compile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: code })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update results
+                document.getElementById('lexical-result').textContent = data.lexical || 'No output';
+                document.getElementById('syntax-result').textContent = data.syntax || 'No output';
+                document.getElementById('semantic-result').textContent = data.semantic || 'No output';
+                document.getElementById('codegen-result').textContent = data.codegen || 'No output';
+                document.getElementById('full-result').textContent = data.full || 'No output';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.querySelectorAll('pre').forEach(el => {
+                    el.textContent = 'Error occurred: ' + error.message;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

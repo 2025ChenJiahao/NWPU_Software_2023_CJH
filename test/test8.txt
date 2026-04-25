@@ -1,0 +1,30 @@
+ir {
+    name = "softmax_model"
+    ver = 1
+    producer_name = "SoftmaxProducer"
+    producer_version = "1.0"
+    input {
+        name = "softmax_input"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 10 }
+                }
+            }
+        }
+    }
+    output {
+        name = "softmax_output"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 10 }
+                }
+            }
+        }
+    }
+}

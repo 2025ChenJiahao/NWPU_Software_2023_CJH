@@ -1,0 +1,59 @@
+ir {
+    name = "fc_model"
+    ver = 1
+    producer_name = "FCProducer"
+    producer_version = "2.0"
+    domain = "test"
+    model_version = 3
+    input {
+        name = "features"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 512 }
+                }
+            }
+        }
+    }
+    output {
+        name = "predictions"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 1 }
+                    dim { dim_value = 10 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "fc_weights"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 512 }
+                    dim { dim_value = 10 }
+                }
+            }
+        }
+    }
+    initializer {
+        name = "fc_bias"
+        type {
+            tensor_type {
+                elem_type = float
+                shape {
+                    dim { dim_value = 10 }
+                }
+            }
+        }
+    }
+    opset_import {
+        domain = "ai.onnx"
+        version = 13
+    }
+}
