@@ -68,8 +68,8 @@ S-ONNXCompiler/
 1. **克隆项目**（如果从版本控制中获取）：
    ```bash
    
-   git clone https://github.com/2025ChenJiahao/NWPU_Software_2023_CJH/编译原理/S-ONNXCompiler
-   cd S-ONNXCompiler
+   git clone https://github.com/2025ChenJiahao/NWPU_Software_2023_CJH.git
+   cd NWPU_Software_2023_CJH/编译原理/S-ONNXCompiler
    ```
 
 2. **执行编译**：
