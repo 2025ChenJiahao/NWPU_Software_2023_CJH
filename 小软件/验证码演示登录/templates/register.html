@@ -1,0 +1,77 @@
+{% extends "auth_base.html" %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/email_verify.css') }}">
+{% endblock %}
+
+{% block content %}
+<form method="POST" class="auth-form" id="registerForm">
+    <div class="form-group">
+        <label>{{ platform_config.fields.username_label }}</label>
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H3z"/></svg>
+            <input type="text" name="username" required autocomplete="username" placeholder="请输入{{ platform_config.fields.username_label }}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>{{ platform_config.fields.email_label }}</label>
+        <div class="email-row">
+            <div class="input-wrapper input-wrapper-full">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                <input type="email" name="email" id="emailInput" required placeholder="请输入{{ platform_config.fields.email_label }}">
+            </div>
+            <button type="button" id="sendCodeBtn" class="btn-send-code">发送验证码</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>邮箱验证码</label>
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <input type="text" name="verification_code" maxlength="6" required placeholder="请输入6位验证码" autocomplete="off">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>{{ platform_config.fields.password_label }}</label>
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+            <input type="password" name="password" required autocomplete="new-password" placeholder="至少6位">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>确认密码</label>
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+            <input type="password" name="confirm_password" required autocomplete="new-password" placeholder="再次输入密码">
+        </div>
+    </div>
+    <div class="form-group captcha-group">
+        <label>图片验证码</label>
+        <div class="captcha-row">
+            <div class="input-wrapper">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zm10 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                <input type="text" name="captcha" required maxlength="4" placeholder="验证码" autocomplete="off">
+            </div>
+            <img src="{{ url_for('auth.get_captcha') }}" alt="验证码" class="captcha-img" id="captchaImg" title="点击刷新验证码">
+        </div>
+    </div>
+    <div class="form-agreement">
+        <label class="checkbox-label">
+            <input type="checkbox" required> 我已阅读并同意 <a href="#">服务协议</a> 和 <a href="#">隐私政策</a>
+        </label>
+    </div>
+    <button type="submit" class="btn-primary">
+        <span>{{ platform_config.button_text_register }}</span>
+        <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </button>
+</form>
+{% endblock %}
+
+{% block footer %}
+<a href="{{ url_for('auth.login_page', platform=platform_slug) }}" class="auth-link">
+    已有账号？<strong>去登录</strong>
+</a>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/email_verify.js') }}"></script>
+{% endblock %}

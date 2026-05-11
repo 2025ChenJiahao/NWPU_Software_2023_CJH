@@ -1,0 +1,203 @@
+/* Dashboard Background */
+.dashboard-bg {
+    position: fixed;
+    inset: 0;
+    background: #f0f2f5;
+    overflow: hidden;
+}
+
+.dash-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.1;
+}
+
+.dash-orb-1 {
+    width: 500px; height: 500px;
+    background: #667eea;
+    top: -100px; right: -50px;
+}
+.dash-orb-2 {
+    width: 400px; height: 400px;
+    background: #764ba2;
+    bottom: -100px; left: -50px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+    width: 100%;
+    max-width: 460px;
+    overflow: hidden;
+    animation: authSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header */
+.dashboard-header {
+    padding: 48px 40px 36px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.dash-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 40%);
+}
+
+.dash-logo-wrap {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 16px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.dash-logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.dashboard-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.dash-welcome {
+    font-size: 15px;
+    opacity: 0.8;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Body */
+.dashboard-body {
+    padding: 24px 32px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.info-icon svg { width: 20px; height: 20px; color: #999; }
+
+.info-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.info-label {
+    color: #999;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.platform-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    width: fit-content;
+}
+
+.status-active {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #52C41A;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #52C41A;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Actions */
+.dashboard-actions {
+    padding: 16px 32px 32px;
+    display: flex;
+    gap: 12px;
+}
+
+.btn-dash {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+.btn-dash.btn-outline {
+    background: white;
+    border: 2px solid #e8e8e8;
+    color: #666;
+}
+.btn-dash.btn-outline:hover {
+    border-color: #ff4d4f;
+    color: #ff4d4f;
+    background: #FFF5F5;
+}

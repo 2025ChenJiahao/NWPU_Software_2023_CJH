@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}控制台 - {{ username }}{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="dashboard-bg">
+    <div class="dash-orb dash-orb-1"></div>
+    <div class="dash-orb dash-orb-2"></div>
+</div>
+
+<div class="dashboard">
+    <div class="dashboard-card">
+        <div class="dashboard-header" style="background: linear-gradient(135deg, {{ platform_config.get('primary_color', '#1677FF') }}, {{ platform_config.get('primary_color', '#1677FF') }}dd)">
+            <div class="dash-pattern"></div>
+            <div class="dash-logo-wrap">
+                <img src="{{ url_for('static', filename=platform_config.get('logo', 'img/logos/google.svg')) }}" alt="" class="dash-logo">
+            </div>
+            <h1>登录成功</h1>
+            <p class="dash-welcome">欢迎回来，{{ username }}</p>
+        </div>
+        <div class="dashboard-body">
+            <div class="info-row">
+                <div class="info-icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H3z"/></svg>
+                </div>
+                <div class="info-content">
+                    <span class="info-label">用户名</span>
+                    <span class="info-value">{{ username }}</span>
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8l-4-4H4zm8 1.5L14.5 8H12V5.5z" clip-rule="evenodd"/></svg>
+                </div>
+                <div class="info-content">
+                    <span class="info-label">登录平台</span>
+                    <span class="info-value platform-badge" style="background: {{ platform_config.get('primary_color', '#1677FF') }}20; color: {{ platform_config.get('primary_color', '#1677FF') }}">
+                        {{ platform_config.get('name', platform) }} {{ platform_config.get('name_en', '') }}
+                    </span>
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                </div>
+                <div class="info-content">
+                    <span class="info-label">登录状态</span>
+                    <span class="info-value status-active">
+                        <span class="status-dot"></span> 已登录
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-actions">
+            <a href="{{ url_for('auth.index') }}" class="btn btn-primary btn-dash" style="background: {{ platform_config.get('primary_color', '#1677FF') }}">
+                返回首页
+            </a>
+            <a href="{{ url_for('auth.logout') }}" class="btn btn-outline btn-dash">
+                退出登录
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+/* ===== 微博 Weibo ===== */
+.platform-weibo {
+    background: linear-gradient(135deg, #FFF8F0 0%, #FFE8CC 100%) !important;
+}
+.platform-weibo .auth-bg-circle-1 { background: #FF8200; opacity: 0.06; }
+.platform-weibo .auth-bg-circle-2 { background: #E67300; opacity: 0.04; }
+.platform-weibo .auth-container {
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(255, 130, 0, 0.12);
+}
+.platform-weibo .auth-brand-bar {
+    background: linear-gradient(90deg, #FF8200, #FFa040, #FF8200);
+    height: 4px;
+}
+.platform-weibo .logo-wrapper {
+    background: linear-gradient(135deg, #FF8200 0%, #FFa040 100%);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(255, 130, 0, 0.3);
+}
+.platform-weibo .logo-wrapper::after { display: none; }
+.platform-weibo .platform-logo { filter: brightness(0) invert(1); }
+.platform-weibo .input-wrapper input { border-radius: 999px; border-color: #FFD6B8; background: #FFFCF8; padding-left: 44px; }
+.platform-weibo .input-wrapper input:focus { border-color: #FF8200; box-shadow: 0 0 0 4px rgba(255, 130, 0, 0.1); }
+.platform-weibo .input-icon { left: 16px; color: #FFB088; }
+.platform-weibo .captcha-img { border-radius: 999px; }
+.platform-weibo .captcha-group .captcha-row .input-wrapper input { border-radius: 999px; }
+.platform-weibo .btn-primary {
+    background: linear-gradient(135deg, #FF8200 0%, #FFa040 100%);
+    border-radius: 999px;
+    height: 46px;
+    box-shadow: 0 4px 16px rgba(255, 130, 0, 0.3);
+}
+.platform-weibo .auth-link strong { color: #FF8200; }

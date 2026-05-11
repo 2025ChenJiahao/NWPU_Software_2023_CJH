@@ -1,0 +1,33 @@
+/* ===== QQ ===== */
+.platform-qq {
+    background: linear-gradient(135deg, #E8F4FD 0%, #D0ECFB 50%, #B8E4F9 100%) !important;
+}
+.platform-qq .auth-bg-circle-1 { background: #12B7F5; opacity: 0.08; width: 400px; height: 400px; }
+.platform-qq .auth-bg-circle-2 { background: #0d9ed8; opacity: 0.06; }
+.platform-qq .auth-bg-pattern { opacity: 0.04; }
+.platform-qq .auth-container {
+    max-width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(18, 183, 245, 0.15), 0 0 0 1px rgba(18, 183, 245, 0.1);
+}
+.platform-qq .auth-brand-bar { background: linear-gradient(90deg, #12B7F5, #0d9ed8, #12B7F5); }
+.platform-qq .auth-header { padding: 36px 32px 12px; }
+.platform-qq .logo-wrapper {
+    background: linear-gradient(135deg, #12B7F5 0%, #0ea5dd 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(18, 183, 245, 0.35);
+}
+.platform-qq .logo-wrapper::after { display: none; }
+.platform-qq .platform-logo { filter: brightness(0) invert(1); }
+.platform-qq .auth-header h1 { font-size: 22px; color: #333; }
+.platform-qq .input-wrapper input { border-color: #D6EAFB; border-radius: 10px; background: #F8FCFF; }
+.platform-qq .input-wrapper input:focus { border-color: #12B7F5; box-shadow: 0 0 0 4px rgba(18, 183, 245, 0.1); }
+.platform-qq .btn-primary {
+    background: linear-gradient(135deg, #12B7F5 0%, #0ea5dd 100%);
+    border-radius: 999px;
+    height: 48px;
+    box-shadow: 0 6px 20px rgba(18, 183, 245, 0.35);
+}
+.platform-qq .btn-primary:hover { box-shadow: 0 8px 28px rgba(18, 183, 245, 0.45); }
+.platform-qq .auth-link { color: #12B7F5; }
+.platform-qq .auth-link strong { color: #0d9ed8; }

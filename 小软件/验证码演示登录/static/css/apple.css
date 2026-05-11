@@ -1,0 +1,61 @@
+/* ===== Apple ===== */
+.platform-apple {
+    background: #FFFFFF !important;
+}
+.platform-apple .auth-bg-layer { display: none; }
+.platform-apple .auth-container {
+    max-width: 420px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+.platform-apple .auth-brand-bar { display: none; }
+.platform-apple .auth-header { padding: 48px 40px 16px; }
+.platform-apple .logo-wrapper {
+    background: transparent;
+    box-shadow: none;
+    width: 64px;
+    height: 64px;
+}
+.platform-apple .logo-wrapper::after { display: none; }
+.platform-apple .platform-logo { width: 56px; height: 56px; }
+.platform-apple .auth-header h1 {
+    font-size: 28px;
+    color: #1d1d1f;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+}
+.platform-apple .auth-subtitle { display: none; }
+.platform-apple .form-group label {
+    font-size: 13px;
+    color: #86868b;
+    font-weight: 400;
+}
+.platform-apple .input-wrapper input {
+    border: 1px solid #d2d2d7;
+    border-radius: 10px;
+    background: transparent;
+    padding: 14px 16px 14px 44px;
+    font-size: 17px;
+}
+.platform-apple .input-wrapper input:focus {
+    border-color: #0071E3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+.platform-apple .input-icon { color: #86868b; left: 16px; }
+.platform-apple .captcha-img { border-radius: 10px; }
+.platform-apple .btn-primary {
+    background: #0071E3;
+    border-radius: 10px;
+    height: 48px;
+    font-size: 17px;
+    font-weight: 400;
+    box-shadow: none;
+}
+.platform-apple .btn-primary:hover { background: #0077ED; }
+.platform-apple .btn-arrow { display: none; }
+.platform-apple .auth-link { color: #0071E3; }
+.platform-apple .auth-link strong { color: #0071E3; }
+.platform-apple .forgot-link { color: #0071E3; }
+.platform-apple .auth-legal { display: none; }

@@ -1,0 +1,77 @@
+/* ===== GitHub ===== */
+.platform-github {
+    background: #0D1117 !important;
+}
+.platform-github .auth-bg-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 32px 32px;
+    opacity: 1;
+}
+.platform-github .auth-bg-circle-1 { background: #58A6FF; opacity: 0.04; }
+.platform-github .auth-bg-circle-2 { background: #3FB950; opacity: 0.03; }
+.platform-github .back-link { color: #8B949E; background: rgba(255,255,255,0.05); }
+.platform-github .back-link:hover { color: #E6EDF3; background: rgba(255,255,255,0.1); }
+.platform-github .auth-container {
+    max-width: 400px;
+    border-radius: 12px;
+    background: #161B22;
+    border: 1px solid #30363D;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.platform-github .auth-brand-bar {
+    background: linear-gradient(90deg, #238636, #2EA043, #238636);
+    height: 3px;
+}
+.platform-github .logo-wrapper {
+    background: transparent;
+    box-shadow: none;
+}
+.platform-github .logo-wrapper::after { display: none; }
+.platform-github .platform-logo { width: 48px; height: 48px; }
+.platform-github .auth-header h1 {
+    font-size: 24px;
+    color: #E6EDF3;
+    font-weight: 300;
+}
+.platform-github .auth-subtitle { color: #484F58; }
+.platform-github .form-group label { color: #E6EDF3; font-size: 14px; }
+.platform-github .input-icon { color: #484F58; }
+.platform-github .input-wrapper input {
+    border: 1px solid #30363D;
+    border-radius: 6px;
+    background: #0D1117;
+    color: #E6EDF3;
+    padding: 10px 12px 10px 42px;
+}
+.platform-github .input-wrapper input:focus {
+    border-color: #58A6FF;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+    background: #0D1117;
+}
+.platform-github .input-wrapper input::placeholder { color: #484F58; }
+.platform-github .captcha-img { border-color: #30363D; }
+.platform-github .btn-primary {
+    background: #238636;
+    border-radius: 6px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(240,246,252,0.1);
+    box-shadow: none;
+}
+.platform-github .btn-primary:hover { background: #2EA043; border-color: rgba(240,246,252,0.1); }
+.platform-github .auth-link { color: #58A6FF; }
+.platform-github .auth-link strong { color: #58A6FF; }
+.platform-github .auth-divider::before, .platform-github .auth-divider::after { background: #21262D; }
+.platform-github .auth-divider span { color: #484F58; }
+.platform-github .tp-icon { border-color: #30363D; background: transparent; }
+.platform-github .tp-icon svg { color: #8B949E; }
+.platform-github .tp-icon:hover { border-color: #58A6FF; }
+.platform-github .tp-icon:hover svg { color: #58A6FF; }
+.platform-github .form-options { color: #8B949E; }
+.platform-github .checkbox-label { color: #8B949E; }
+.platform-github .forgot-link { color: #58A6FF; }
+.platform-github .flash-error { background: #3D1418; border-color: #6E2B2F; color: #FF7B72; }
+.platform-github .flash-success { background: #12261E; border-color: #1B4D2E; color: #3FB950; }
+.platform-github .flash-icon { fill: currentColor; }
+.platform-github .auth-legal { color: #484F58; }

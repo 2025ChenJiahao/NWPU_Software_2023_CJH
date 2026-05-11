@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ platform_config.name }} - {{ page_type }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth_base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/' + platform_config.css_file) }}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="platform-body platform-{{ platform_slug }}" style="--primary-color: {{ platform_config.primary_color }}; --bg-color: {{ platform_config.bg_color }};">
+    <!-- 装饰背景层 -->
+    <div class="auth-bg-layer">
+        <div class="auth-bg-pattern"></div>
+        <div class="auth-bg-circle auth-bg-circle-1"></div>
+        <div class="auth-bg-circle auth-bg-circle-2"></div>
+        <div class="auth-bg-circle auth-bg-circle-3"></div>
+    </div>
+
+    <div class="auth-wrapper">
+        <a href="{{ url_for('auth.index') }}" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11 2L5 8l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            返回首页
+        </a>
+        <div class="auth-container platform-{{ platform_slug }}">
+            <!-- 顶部品牌条 -->
+            <div class="auth-brand-bar">
+                <div class="brand-bar-pattern"></div>
+            </div>
+
+            <div class="auth-header">
+                <div class="logo-wrapper">
+                    <img src="{{ url_for('static', filename=platform_config.logo) }}" alt="{{ platform_config.name }}" class="platform-logo">
+                </div>
+                <h1>{{ title }}</h1>
+                <p class="auth-subtitle">{{ platform_config.name }} {{ platform_config.name_en }}</p>
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash-msg flash-{{ category }}">
+                    <svg class="flash-icon" viewBox="0 0 16 16" fill="currentColor">
+                        {% if category == 'error' %}<path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 10.5a.75.75 0 110-1.5.75.75 0 010 1.5zM8.75 5v4a.75.75 0 01-1.5 0V5a.75.75 0 011.5 0z"/>
+                        {% else %}<path d="M8 1a7 7 0 100 14A7 7 0 008 1zm3.22 5.28l-4 4a.75.75 0 01-1.06 0l-2-2a.75.75 0 111.06-1.06L6.7 8.69l3.47-3.47a.75.75 0 111.06 1.06z"/>{% endif %}
+                    </svg>
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <div class="auth-body">
+                {% block content %}{% endblock %}
+            </div>
+
+            <div class="auth-divider">
+                <span>或</span>
+            </div>
+
+            <div class="auth-footer">
+                {% block footer %}{% endblock %}
+            </div>
+
+            <div class="auth-bottom-text">
+                {% block bottom_text %}{% endblock %}
+            </div>
+        </div>
+        <p class="auth-legal">本页面仅用于演示，非真实{{ platform_config.name }}网站</p>
+    </div>
+    <script src="{{ url_for('static', filename='js/captcha.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

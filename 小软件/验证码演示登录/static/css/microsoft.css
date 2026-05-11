@@ -1,0 +1,63 @@
+/* ===== Microsoft ===== */
+.platform-microsoft {
+    background: #F2F2F2 !important;
+}
+.platform-microsoft .auth-bg-layer { display: none; }
+.platform-microsoft .auth-container {
+    max-width: 440px;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.platform-microsoft .auth-brand-bar { display: none; }
+.platform-microsoft .auth-header { padding: 32px 32px 8px; }
+.platform-microsoft .logo-wrapper {
+    background: transparent;
+    box-shadow: none;
+    width: 48px;
+    height: 48px;
+}
+.platform-microsoft .logo-wrapper::after { display: none; }
+.platform-microsoft .platform-logo { width: 40px; height: 40px; }
+.platform-microsoft .auth-header h1 {
+    font-size: 24px;
+    color: #1B1B1B;
+    font-weight: 600;
+    font-family: 'Segoe UI', 'Segoe UI Web', Arial, sans-serif;
+}
+.platform-microsoft .auth-subtitle { display: none; }
+.platform-microsoft .form-group label {
+    font-size: 13px;
+    color: #1B1B1B;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.platform-microsoft .input-icon { display: none; }
+.platform-microsoft .input-wrapper input {
+    border: 1px solid #8C8C8C;
+    border-radius: 0;
+    background: transparent;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.platform-microsoft .input-wrapper input:focus {
+    border-color: #0078D4;
+    box-shadow: none;
+    border-bottom-width: 2px;
+    padding-bottom: 9px;
+}
+.platform-microsoft .captcha-img { border-radius: 0; }
+.platform-microsoft .btn-primary {
+    background: #0078D4;
+    border-radius: 2px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-shadow: none;
+}
+.platform-microsoft .btn-primary:hover { background: #106EBE; }
+.platform-microsoft .btn-arrow { display: none; }
+.platform-microsoft .auth-link { color: #0078D4; }
+.platform-microsoft .auth-link strong { color: #0078D4; }
+.platform-microsoft .forgot-link { color: #0078D4; }
+.platform-microsoft .auth-legal { display: none; }

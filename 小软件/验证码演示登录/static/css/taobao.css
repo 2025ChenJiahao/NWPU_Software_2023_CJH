@@ -1,0 +1,34 @@
+/* ===== 淘宝 Taobao ===== */
+.platform-taobao {
+    background: linear-gradient(135deg, #FFF5F0 0%, #FFE8D6 100%) !important;
+}
+.platform-taobao .auth-bg-circle-1 { background: #FF5000; opacity: 0.06; }
+.platform-taobao .auth-bg-circle-2 { background: #FF7A33; opacity: 0.04; }
+.platform-taobao .auth-container {
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(255, 80, 0, 0.1);
+}
+.platform-taobao .auth-brand-bar {
+    background: linear-gradient(90deg, #FF5000, #FF7A33, #FF5000);
+    height: 4px;
+}
+.platform-taobao .logo-wrapper {
+    background: linear-gradient(135deg, #FF5000 0%, #FF7A33 100%);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(255, 80, 0, 0.3);
+}
+.platform-taobao .logo-wrapper::after { display: none; }
+.platform-taobao .platform-logo { filter: brightness(0) invert(1); }
+.platform-taobao .auth-header h1 { color: #333; }
+.platform-taobao .input-wrapper input { border-color: #FFD6B8; background: #FFFAF5; border-radius: 8px; }
+.platform-taobao .input-wrapper input:focus { border-color: #FF5000; box-shadow: 0 0 0 4px rgba(255, 80, 0, 0.08); }
+.platform-taobao .btn-primary {
+    background: linear-gradient(135deg, #FF5000 0%, #FF7A33 100%);
+    border-radius: 8px;
+    height: 46px;
+    box-shadow: 0 4px 16px rgba(255, 80, 0, 0.3);
+}
+.platform-taobao .auth-link strong { color: #FF5000; }
+.platform-taobao .forgot-link { color: #FF5000; }
+.platform-taobao .input-icon { color: #FFB088; }

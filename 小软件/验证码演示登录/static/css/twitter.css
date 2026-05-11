@@ -1,0 +1,74 @@
+/* ===== X (Twitter) ===== */
+.platform-twitter {
+    background: #000 !important;
+}
+.platform-twitter .auth-bg-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 1;
+}
+.platform-twitter .auth-bg-circle-1 { background: #1D9BF0; opacity: 0.04; }
+.platform-twitter .back-link { color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.06); }
+.platform-twitter .back-link:hover { color: #fff; }
+.platform-twitter .auth-container {
+    max-width: 420px;
+    border-radius: 16px;
+    background: #000;
+    box-shadow: none;
+    border: 1px solid #2F3336;
+}
+.platform-twitter .auth-brand-bar { display: none; }
+.platform-twitter .auth-header { padding: 48px 32px 16px; }
+.platform-twitter .logo-wrapper {
+    background: transparent;
+    box-shadow: none;
+}
+.platform-twitter .logo-wrapper::after { display: none; }
+.platform-twitter .auth-header h1 {
+    font-size: 32px;
+    color: #E7E9EA;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+.platform-twitter .auth-subtitle { color: #71767B; }
+.platform-twitter .form-group label { color: #E7E9EA; font-size: 14px; }
+.platform-twitter .input-icon { color: #71767B; }
+.platform-twitter .input-wrapper input {
+    border: 1px solid #333639;
+    border-radius: 6px;
+    background: transparent;
+    color: #E7E9EA;
+    padding: 12px 14px 12px 44px;
+    font-size: 17px;
+}
+.platform-twitter .input-wrapper input:focus {
+    border-color: #1D9BF0;
+    box-shadow: 0 0 0 1px #1D9BF0;
+}
+.platform-twitter .input-wrapper input::placeholder { color: #71767B; }
+.platform-twitter .captcha-img { border-color: #333639; }
+.platform-twitter .btn-primary {
+    background: #EFF3F4;
+    color: #0F1419;
+    border-radius: 9999px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: none;
+}
+.platform-twitter .btn-primary:hover { background: #D7DBDC; }
+.platform-twitter .btn-arrow { display: none; }
+.platform-twitter .auth-divider::before, .platform-twitter .auth-divider::after { background: #2F3336; }
+.platform-twitter .auth-divider span { color: #71767B; }
+.platform-twitter .auth-link { color: #1D9BF0; }
+.platform-twitter .auth-link strong { color: #1D9BF0; }
+.platform-twitter .tp-icon { border-color: #333639; background: transparent; }
+.platform-twitter .tp-icon svg { color: #71767B; }
+.platform-twitter .tp-icon:hover { border-color: #1D9BF0; }
+.platform-twitter .tp-icon:hover svg { color: #1D9BF0; }
+.platform-twitter .form-options { color: #71767B; }
+.platform-twitter .checkbox-label { color: #71767B; }
+.platform-twitter .forgot-link { color: #1D9BF0; }
+.platform-twitter .flash-error { background: rgba(254,44,85,0.1); border-color: rgba(254,44,85,0.2); color: #F4212E; }
+.platform-twitter .flash-success { background: rgba(0,186,124,0.1); border-color: rgba(0,186,124,0.2); color: #00BA7C; }
+.platform-twitter .auth-legal { color: #71767B; }

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}验证码演示登录系统{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+<!-- 装饰背景 -->
+<div class="page-bg">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="bg-grid"></div>
+</div>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">验证码演示系统 v1.0</div>
+        <h1>验证码演示登录系统</h1>
+        <p>模拟 <strong>12大平台</strong> 注册登录界面 · 图片验证码 · 邮箱验证码 · 数据持久化</p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-num">6</span>
+                <span class="stat-label">国内平台</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">6</span>
+                <span class="stat-label">国际平台</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">12</span>
+                <span class="stat-label">独立风格</span>
+            </div>
+        </div>
+        {% if session.get('username') %}
+        <div class="user-bar">
+            <div class="user-avatar">{{ session.username[0]|upper }}</div>
+            <span>已登录: <strong>{{ session.username }}</strong></span>
+            <a href="{{ url_for('auth.dashboard') }}" class="btn btn-sm btn-light">控制台</a>
+            <a href="{{ url_for('auth.logout') }}" class="btn btn-sm btn-outline-light">退出</a>
+        </div>
+        {% endif %}
+    </div>
+</header>
+
+<main class="container">
+    <section class="platform-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="section-icon">🇨🇳</span> 国内平台
+            </h2>
+            <p class="section-desc">微信 · QQ · 支付宝 · 淘宝 · 抖音 · 微博</p>
+        </div>
+        <div class="platform-grid">
+            {% for slug, p in domestic.items() %}
+            <a href="{{ url_for('auth.login_page', platform=slug) }}" class="platform-card" style="--accent: {{ p.primary_color }}">
+                <div class="card-bg" style="background: linear-gradient(135deg, {{ p.primary_color }} 0%, {{ p.primary_color }}dd 100%)">
+                    <div class="card-pattern"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-logo-wrap">
+                        <img src="{{ url_for('static', filename=p.logo) }}" alt="{{ p.name }}" class="card-logo">
+                    </div>
+                    <h3>{{ p.name }}</h3>
+                    <p class="card-subtitle">{{ p.name_en }}</p>
+                    <div class="card-actions">
+                        <span class="btn btn-login">登录 / 注册</span>
+                    </div>
+                </div>
+                <div class="card-shine"></div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="platform-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="section-icon">🌍</span> 国际平台
+            </h2>
+            <p class="section-desc">Google · GitHub · Apple · Facebook · X · Microsoft</p>
+        </div>
+        <div class="platform-grid">
+            {% for slug, p in international.items() %}
+            <a href="{{ url_for('auth.login_page', platform=slug) }}" class="platform-card" style="--accent: {{ p.primary_color }}">
+                <div class="card-bg" style="background: linear-gradient(135deg, {{ p.primary_color }} 0%, {{ p.primary_color }}dd 100%)">
+                    <div class="card-pattern"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-logo-wrap">
+                        <img src="{{ url_for('static', filename=p.logo) }}" alt="{{ p.name }}" class="card-logo">
+                    </div>
+                    <h3>{{ p.name }}</h3>
+                    <p class="card-subtitle">{{ p.name_en }}</p>
+                    <div class="card-actions">
+                        <span class="btn btn-login">登录 / 注册</span>
+                    </div>
+                </div>
+                <div class="card-shine"></div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>验证码演示登录系统 · 数据存储在本地SQLite数据库</p>
+        <p class="footer-sub">所有页面仅用于演示目的，非真实网站</p>
+    </div>
+</footer>
+{% endblock %}

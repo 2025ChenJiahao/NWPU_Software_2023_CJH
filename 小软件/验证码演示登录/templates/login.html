@@ -1,0 +1,59 @@
+{% extends "auth_base.html" %}
+
+{% block content %}
+<form method="POST" class="auth-form">
+    <div class="form-group">
+        <label>{{ platform_config.fields.username_label }}</label>
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H3z"/></svg>
+            <input type="text" name="username" required autocomplete="username" placeholder="请输入{{ platform_config.fields.username_label }}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>{{ platform_config.fields.password_label }}</label>
+        <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+            <input type="password" name="password" required autocomplete="current-password" placeholder="请输入{{ platform_config.fields.password_label }}">
+        </div>
+    </div>
+    <div class="form-group captcha-group">
+        <label>验证码</label>
+        <div class="captcha-row">
+            <div class="input-wrapper">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zm10 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                <input type="text" name="captcha" required maxlength="4" placeholder="验证码" autocomplete="off">
+            </div>
+            <img src="{{ url_for('auth.get_captcha') }}" alt="验证码" class="captcha-img" id="captchaImg" title="点击刷新验证码">
+        </div>
+    </div>
+    <div class="form-options">
+        <label class="checkbox-label">
+            <input type="checkbox" name="remember"> 记住我
+        </label>
+        <a href="#" class="forgot-link">忘记密码？</a>
+    </div>
+    <button type="submit" class="btn-primary">
+        <span>{{ platform_config.button_text_login }}</span>
+        <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </button>
+</form>
+
+<!-- 第三方登录 -->
+<div class="third-party-login">
+    <p class="third-party-title">其他登录方式</p>
+    <div class="third-party-icons">
+        <button type="button" class="tp-icon" title="手机登录">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+        </button>
+        <button type="button" class="tp-icon" title="扫码登录">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v4h2v-4zm2 0h2v2h-2v-2zm-2 6h-2v2h2v-2zm2-2h2v4h-4v-2h2v-2zm-4 4h-2v2h2v-2z"/></svg>
+        </button>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<a href="{{ url_for('auth.register_page', platform=platform_slug) }}" class="auth-link">
+    没有账号？<strong>立即注册</strong>
+</a>
+{% endblock %}

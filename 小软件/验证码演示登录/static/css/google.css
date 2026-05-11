@@ -1,0 +1,74 @@
+/* ===== Google ===== */
+.platform-google {
+    background: #FFFFFF !important;
+}
+.platform-google .auth-bg-layer { display: none; }
+.platform-google .auth-container {
+    max-width: 460px;
+    border-radius: 24px;
+    border: 1px solid #dadce0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.platform-google .auth-brand-bar { display: none; }
+.platform-google .auth-header { padding: 48px 48px 16px; }
+.platform-google .logo-wrapper {
+    background: transparent;
+    box-shadow: none;
+    width: 75px;
+    height: 75px;
+}
+.platform-google .logo-wrapper::after { display: none; }
+.platform-google .platform-logo { width: 75px; height: 75px; }
+.platform-google .auth-header h1 {
+    font-size: 24px;
+    color: #202124;
+    font-weight: 400;
+    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+    margin-top: 16px;
+}
+.platform-google .auth-subtitle { display: none; }
+.platform-google .form-group label {
+    font-size: 12px;
+    color: #5f6368;
+    font-weight: 400;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+.platform-google .input-icon { display: none; }
+.platform-google .input-wrapper input {
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    background: transparent;
+    padding: 13px 14px;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+.platform-google .input-wrapper input:focus {
+    border-color: #4285F4;
+    box-shadow: none;
+    border-width: 2px;
+    padding: 12px 13px;
+}
+.platform-google .captcha-img { border-radius: 4px; }
+.platform-google .btn-primary {
+    background: #1a73e8;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+    letter-spacing: 0.25px;
+    box-shadow: none;
+}
+.platform-google .btn-primary:hover { background: #1765cc; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.platform-google .btn-arrow { display: none; }
+.platform-google .auth-link {
+    color: #1a73e8;
+    font-weight: 500;
+    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+}
+.platform-google .auth-link strong { color: #1a73e8; }
+.platform-google .auth-divider span { font-family: 'Roboto', Arial, sans-serif; }
+.platform-google .back-link { background: transparent; }
+.platform-google .form-options { font-family: 'Roboto', Arial, sans-serif; }
+.platform-google .forgot-link { color: #1a73e8; }
+.platform-google .auth-legal { display: none; }

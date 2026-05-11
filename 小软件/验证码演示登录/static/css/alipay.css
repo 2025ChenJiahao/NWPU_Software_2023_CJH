@@ -1,0 +1,28 @@
+/* ===== 支付宝 Alipay ===== */
+.platform-alipay {
+    background: linear-gradient(180deg, #E8F0FE 0%, #F5F5F5 100%) !important;
+}
+.platform-alipay .auth-bg-circle-1 { background: #1677FF; opacity: 0.05; }
+.platform-alipay .auth-container {
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(22, 119, 255, 0.08);
+}
+.platform-alipay .auth-brand-bar { background: linear-gradient(90deg, #1677FF, #4096FF); height: 3px; }
+.platform-alipay .logo-wrapper {
+    background: linear-gradient(135deg, #1677FF 0%, #4096FF 100%);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(22, 119, 255, 0.3);
+}
+.platform-alipay .logo-wrapper::after { display: none; }
+.platform-alipay .platform-logo { filter: brightness(0) invert(1); }
+.platform-alipay .auth-header h1 { font-size: 22px; font-weight: 600; color: #1a1a2e; }
+.platform-alipay .input-wrapper input { border-radius: 8px; border-color: #E8E8E8; }
+.platform-alipay .input-wrapper input:focus { border-color: #1677FF; }
+.platform-alipay .btn-primary {
+    background: linear-gradient(135deg, #1677FF 0%, #4096FF 100%);
+    border-radius: 8px;
+    height: 46px;
+    box-shadow: 0 4px 16px rgba(22, 119, 255, 0.3);
+}
+.platform-alipay .auth-link strong { color: #1677FF; }

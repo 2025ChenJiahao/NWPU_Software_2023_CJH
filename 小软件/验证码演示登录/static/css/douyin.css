@@ -1,0 +1,68 @@
+/* ===== 抖音 Douyin ===== */
+.platform-douyin {
+    background: #000 !important;
+}
+.platform-douyin .auth-bg-layer {
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(254, 44, 85, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(37, 244, 238, 0.1) 0%, transparent 50%);
+}
+.platform-douyin .auth-bg-pattern { opacity: 0.05; background-image: radial-gradient(circle at 1px 1px, #fff 1px, transparent 0); }
+.platform-douyin .auth-bg-circle { display: none; }
+.platform-douyin .back-link { color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.08); }
+.platform-douyin .back-link:hover { color: #fff; background: rgba(255,255,255,0.15); }
+.platform-douyin .auth-container {
+    max-width: 400px;
+    border-radius: 16px;
+    background: rgba(22, 22, 22, 0.95);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    backdrop-filter: blur(20px);
+}
+.platform-douyin .auth-brand-bar {
+    background: linear-gradient(90deg, #FE2C55, #25F4EE, #FE2C55);
+    height: 3px;
+}
+.platform-douyin .logo-wrapper {
+    background: linear-gradient(135deg, #FE2C55 0%, #25F4EE 100%);
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(254, 44, 85, 0.3);
+}
+.platform-douyin .logo-wrapper::after { display: none; }
+.platform-douyin .platform-logo { filter: brightness(0) invert(1); }
+.platform-douyin .auth-header h1 { color: #fff; }
+.platform-douyin .auth-subtitle { color: rgba(255,255,255,0.4); }
+.platform-douyin .form-group label { color: rgba(255,255,255,0.6); }
+.platform-douyin .input-icon { color: rgba(255,255,255,0.3); }
+.platform-douyin .input-wrapper input {
+    border-color: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    border-radius: 10px;
+}
+.platform-douyin .input-wrapper input:focus {
+    border-color: #FE2C55;
+    box-shadow: 0 0 0 4px rgba(254, 44, 85, 0.15);
+    background: rgba(255,255,255,0.08);
+}
+.platform-douyin .input-wrapper input::placeholder { color: rgba(255,255,255,0.25); }
+.platform-douyin .captcha-img { border-color: rgba(255,255,255,0.1); }
+.platform-douyin .btn-primary {
+    background: linear-gradient(135deg, #FE2C55 0%, #FF6B81 100%);
+    border-radius: 10px;
+    height: 48px;
+    box-shadow: 0 6px 20px rgba(254, 44, 85, 0.35);
+}
+.platform-douyin .auth-divider::before, .platform-douyin .auth-divider::after { background: rgba(255,255,255,0.1); }
+.platform-douyin .auth-divider span { color: rgba(255,255,255,0.3); }
+.platform-douyin .auth-link { color: rgba(255,255,255,0.5); }
+.platform-douyin .auth-link strong { color: #FE2C55; }
+.platform-douyin .tp-icon { border-color: rgba(255,255,255,0.15); background: transparent; }
+.platform-douyin .tp-icon svg { color: rgba(255,255,255,0.5); }
+.platform-douyin .tp-icon:hover { border-color: #FE2C55; }
+.platform-douyin .tp-icon:hover svg { color: #FE2C55; }
+.platform-douyin .checkbox-label { color: rgba(255,255,255,0.5); }
+.platform-douyin .form-options .forgot-link { color: #FE2C55; }
+.platform-douyin .flash-error { background: rgba(254,44,85,0.15); border-color: rgba(254,44,85,0.3); color: #FF6B81; }
+.platform-douyin .flash-success { background: rgba(37,244,238,0.1); border-color: rgba(37,244,238,0.2); color: #25F4EE; }
+.platform-douyin .auth-legal { color: rgba(255,255,255,0.2); }
